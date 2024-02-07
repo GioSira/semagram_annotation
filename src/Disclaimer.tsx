@@ -16,9 +16,9 @@ function Disclaimer() {
                     to decide whether the concept satisfy the given category and criteria.
                 </p>
                 <p className="mt-2">
-                    At any point during the annotation task, you can mark an information as "<i>wrong</i>" if you
-                    find it erroneous. A wrong semantic information could be an incomplete word (e.g., "t-shi")
-                    or a fragment of text (e.g., "that satisfy the").
+                    At any point during the annotation task, you can mark a word as "<i>wrong</i>" if you
+                    find it erroneous. A wrong wrong could be a truncated word (e.g., "t-shi"),
+                    a fragment of text (e.g., "that satisfy the"), or a fake word (e.g., "coucticanitic").
                 </p>
                 <p className="mt-2">
                     Please, register your name as <b>name_surname</b>.
