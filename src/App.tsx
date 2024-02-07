@@ -12,10 +12,10 @@ import {data} from "./data/data";
 
 type DataType = {
     name: string,
-    answers: ("yes" | "no")[],
+    answers: ("yes" | "no" | "wrong")[],
     i: number,
     dataset: string[],
-    isWrong: (true | false)[],
+    //isWrong: (true | false)[],
     timeDiffs: number[],
     //models: string[],
     date: Date
@@ -46,8 +46,8 @@ function App() {
     const [exampleSeen, setExampleSeen] = useState(false);
     const [dataset, setDataset] = useState<string[] | null>([]);
     const [i, setI] = useState(0);
-    const [answers, setAnswers] = useState<("yes" | "no")[]>([]);
-    const [isWrong, setIsWrong] = useState<(true | false)[]>([]);
+    const [answers, setAnswers] = useState<("yes" | "no" | "wrong")[]>([]);
+    //  const [isWrong, setIsWrong] = useState<(true | false)[]>([]);
     // const [models, setModels] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isDownloaded, setIsDownloaded] = useState(false);
@@ -93,7 +93,7 @@ function App() {
         }
     }
 
-    const onClick = (answer: ("yes" | "no")) => {
+    const onClick = (answer: ("yes" | "no" | "wrong")) => {
         const newAnswers = [...answers, answer];
         setAnswers(newAnswers);
         next(newAnswers);
@@ -128,7 +128,7 @@ function App() {
                             setAnswers(data.answers);
                             setTimeDiffs(data.timeDiffs);
                             setI(data.i);
-                            setIsWrong(data.isWrong);
+                            // setIsWrong(data.isWrong);
                             // setModels(data.models);
                             setReady(true);
                         }
@@ -142,7 +142,7 @@ function App() {
         setTimeBetweenQuestionsStart(new Date());
     }
 
-    const next = async (newAnswers: ("yes" | "no")[]) => {
+    const next = async (newAnswers: ("yes" | "no" | "wrong")[]) => {
         if (!isLoading) {
             setIsLoading(true);
             const timeDiff = calculateTimeDifference(timeBetweenQuestionsStart, new Date())
@@ -158,7 +158,7 @@ function App() {
                 const isWrongChecked = checkbox.checked;
                 // @ts-ignore
                 const model = dataset[i]["model_name"];
-                setIsWrong([...isWrong, isWrongChecked]);
+                // setIsWrong([...isWrong, isWrongChecked]);
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
                 // Save the answers to firebase
@@ -171,7 +171,7 @@ function App() {
                             answers: newAnswers,
                             i: newAnswers.length,
                             dataset: dataset,
-                            isWrong: [...isWrong, checkbox.checked],
+                            // isWrong: [...isWrong, checkbox.checked],
                             timeDiffs: [...timeDiffs, timeDiff],
                             // models: [...models, model],
                             date: new Date(),
@@ -181,7 +181,7 @@ function App() {
                         updateDoc(docRef, {
                             answers: newAnswers,
                             i: newAnswers.length,
-                            isWrong: [...isWrong, checkbox.checked],
+                            // isWrong: [...isWrong, checkbox.checked],
                             timeDiffs: [...timeDiffs, timeDiff],
                             // models: [...models, model],
                             date: new Date(),
@@ -296,15 +296,14 @@ function App() {
                             disabled={isLoading}>
                         No
                     </button>
+                    <button id="advanced-button"
+                            onClick={() => onClick("wrong")}
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ml-4 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 shadow-lg disabled:bg-gray-500"
+                            disabled={isLoading}>
+                        Wrong
+                    </button>
                 </div>
                 <div className="flex justify-center mt-4">
-                        <p>
-                            Is this concept <a href="#"
-                                        className="text-blue-600 hover:text-blue-700 cursor-default"
-                                        title="Please select this option if the concept is erroneous">erroneous</a>?
-                        </p>
-                        <input id="hard-checkbox" type="checkbox"
-                               className="ml-2 h-6 w-6 rounded-full shadow checked:shadow-xl cursor-pointer"/>
                     </div>
                     {isDownloaded && dataset ? <div className="flex justify-center mt-8 max-w-2xl mx-auto">
                         <div id={"progress-bar"}
