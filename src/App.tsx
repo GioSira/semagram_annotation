@@ -273,7 +273,7 @@ function App() {
                     <p className="text-xl mt-6" id="line">
                         {
                             // @ts-ignore
-                            dataset ? dataset[i]["criteria"] : ""
+                            dataset ? dataset[i]["Criterium"] : ""
                         }
                     </p>
                 </div>
