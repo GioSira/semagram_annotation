@@ -261,7 +261,7 @@ function App() {
             : <div>
                 <div className="text-center justify-center mt-12">
                     {<MadeByMe/>}
-                    <h1 className="text-4xl font-bold">Is the concept correct with respect to the category and the criteria?</h1>
+                    <h1 className="text-4xl font-bold">Is the semantic information correct with respect to the criterium?</h1>
                     <p className="text-xl mt-6" id="line">
                         Concept: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
                             <b>{

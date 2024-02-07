@@ -31,6 +31,9 @@ function Disclaimer() {
                     does not evaluate your knowledge of English, so you don't need to worry about being tested. If
                     you need more information about the word, you can use the internet to help you.
                 </p>
+                <p className="mt-2">
+                    We would like to thank the testers for their kindly comments.
+                </p>
             </div>
         </div>
     );
