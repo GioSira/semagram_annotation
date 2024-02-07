@@ -13,7 +13,7 @@ function Disclaimer() {
                 <div className="text-2xl mt-4">What are you going to do?</div>
                 <p className="mt-2">
                     In this annotation task, you will be given a concept to evaluate. Your job is
-                    to decide whether the semantic information satisfy the given criterium.
+                    to decide whether the semantic information satisfy the given criterion.
                 </p>
                 <p className="mt-2">
                     At any point during the annotation task, you can mark a word as "<i>wrong</i>" if you

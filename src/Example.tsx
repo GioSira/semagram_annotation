@@ -10,9 +10,8 @@ function Example() {
                 <p className="mt-2">
                     For instance, given the triplet
                     <ul>
-                        <li>Concept: <i>mosquito</i> </li>
-                        <li>Category: <i>animal</i></li>
-                        <li>Criteria: <i>can fly.</i></li>
+                        <li>concept: <i>mosquito</i> </li>
+                        <li>criterion: <i>can fly.</i></li>
                     </ul>
                     the answer is <b>Yes</b> because the mosquito is an animal that flies.
                 </p>
@@ -21,9 +20,8 @@ function Example() {
                 <p className="mt-2">
                     For instance, given the triplet
                     <ul>
-                        <li>Concept: <i>superman</i> </li>
-                        <li>Category: <i>vehicle</i></li>
-                        <li>Criteria: <i>made of steel.</i></li>
+                        <li>concept: <i>superman</i> </li>
+                        <li>criterion: <i>made of steel.</i></li>
                     </ul>
                     the answer is <b>No</b> because superman is not a vehicle made of steel.
                 </p>
@@ -33,9 +31,8 @@ function Example() {
                     At any point during the annotation task, you can mark an information as "<i>wrong</i>" if you
                     find it erroneous. For instance, given the triplet
                     <ul>
-                        <li>Concept: <i>kang</i> </li>
-                        <li>Category: <i>animal</i></li>
-                        <li>Criteria: <i>can jump.</i></li>
+                        <li>concept: <i>kang</i> </li>
+                        <li>criterion: <i>can jump.</i></li>
                     </ul>
                     will be labeled as <b>wrong</b> because "kang" is a truncated word.
                 </p>
