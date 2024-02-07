@@ -263,7 +263,7 @@ function App() {
                     {<MadeByMe/>}
                     <h1 className="text-4xl font-bold">Is the semantic information correct with respect to the criterium?</h1>
                     <p className="text-xl mt-6" id="line">
-                        Concept: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
+                        Semantic Information: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
                             <b>{
                                 // @ts-ignore
                                 dataset ? dataset[i]["llm_concept"] : ""
