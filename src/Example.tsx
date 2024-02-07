@@ -37,7 +37,7 @@ function Example() {
                         <li>Category: <i>animal</i></li>
                         <li>Criteria: <i>can jump.</i></li>
                     </ul>
-                    will be labeled as <b>wrong</b> because "kang" is an incomplete word.
+                    will be labeled as <b>wrong</b> because "kang" is a truncated word.
                 </p>
 
             </div>
