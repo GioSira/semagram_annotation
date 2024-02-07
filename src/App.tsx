@@ -147,7 +147,7 @@ function App() {
             setIsLoading(true);
             const timeDiff = calculateTimeDifference(timeBetweenQuestionsStart, new Date())
 
-            const checkbox = document.getElementById("hard-checkbox") as HTMLInputElement;
+            // const checkbox = document.getElementById("hard-checkbox") as HTMLInputElement;
             if (dataset) {
                 updateProgressBar(i, dataset.length);
                 setIsDownloaded(true);
@@ -155,9 +155,9 @@ function App() {
 
             if (dataset && i < dataset.length) {
                 // Check if the checkbox is checked
-                const isWrongChecked = checkbox.checked;
+                // const isWrongChecked = checkbox.checked;
                 // @ts-ignore
-                const model = dataset[i]["model_name"];
+                // const model = dataset[i]["model_name"];
                 // setIsWrong([...isWrong, isWrongChecked]);
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
@@ -192,7 +192,7 @@ function App() {
             }
 
             setTimeBetweenQuestionsStart(new Date());
-            checkbox.checked = false;
+            // checkbox.checked = false;
 
             if (dataset && i + 1 >= dataset.length) {
                 alert("Thank you for your participation!");
