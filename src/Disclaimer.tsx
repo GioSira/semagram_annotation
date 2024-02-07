@@ -20,9 +20,10 @@ function Disclaimer() {
                     find it erroneous. A wrong semantic information could be an incomplete word (e.g., "t-shi")
                     or a fragment of text (e.g., "that satisfy the").
                 </p>
-                <p>Please, register your name as <b>name_surname</b>.
-                    The registration is only used to pause the annotation.
-                    You can continue the annotation in a second moment from the point you interrupted.
+                <p className="mt-2">
+                    Please, register your name as <b>name_surname</b>.
+                    The registration enables you to continue your evaluation at a later time with
+                    the same username.
                 </p>
                 <p className="mt-2">
                     You will need to complete <b>300</b> of these <b>annotations</b>, which should take about <b>
