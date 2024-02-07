@@ -13,11 +13,11 @@ function Disclaimer() {
                 <div className="text-2xl mt-4">What are you going to do?</div>
                 <p className="mt-2">
                     In this annotation task, you will be given a concept to evaluate. Your job is
-                    to decide whether the concept satisfy the given category and criteria.
+                    to decide whether the semantic information satisfy the given criterium.
                 </p>
                 <p className="mt-2">
                     At any point during the annotation task, you can mark a word as "<i>wrong</i>" if you
-                    find it erroneous. A wrong wrong could be a truncated word (e.g., "t-shi"),
+                    find it erroneous. A wrong word could be a truncated word (e.g., "t-shi"),
                     a fragment of text (e.g., "that satisfy the"), or a fake word (e.g., "coucticanitic").
                 </p>
                 <p className="mt-2">
