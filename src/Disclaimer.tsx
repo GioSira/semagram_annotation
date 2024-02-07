@@ -25,8 +25,8 @@ function Disclaimer() {
                     You can continue the annotation in a second moment from the point you interrupted.
                 </p>
                 <p className="mt-2">
-                    You will need to complete <b>300</b> of these <b>annotations</b>, which should take about
-                     <b>30 minutes</b>. It's important to note that this task
+                    You will need to complete <b>300</b> of these <b>annotations</b>, which should take about <b>
+                    30 minutes</b>. It's important to note that this task
                     does not evaluate your knowledge of English, so you don't need to worry about being tested. If
                     you need more information about the word, you can use the internet to help you.
                 </p>
