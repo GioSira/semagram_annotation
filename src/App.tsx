@@ -270,10 +270,16 @@ function App() {
                             }</b>
                         </span>
                     </p>
-                    <p className="text-xl mt-6" id="line">
+                    Criterion: <p className="text-xl mt-6" id="line">
                         {
                             // @ts-ignore
-                            dataset ? dataset[i]["criterion"] : ""
+                            dataset ? dataset[i]["concept"] : ""
+                        }
+                    </p>
+                    Type: <p className="text-xl mt-6" id="line">
+                        {
+                            // @ts-ignore
+                            dataset ? dataset[i]["type"] : ""
                         }
                     </p>
                 </div>
