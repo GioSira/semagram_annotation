@@ -35,7 +35,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const firstore = getFirestore(app);
-const col = collection(firstore, "semagram") as CollectionReference<DataType>;
+const col = collection(firstore, "framenet") as CollectionReference<DataType>;
 
 
 function App() {
@@ -162,7 +162,7 @@ function App() {
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
                 // Save the answers to firebase
-                const docRef = doc(firstore, "semagram/" + name);
+                const docRef = doc(firstore, "framenet/" + name);
                 await getDoc(docRef).then((docSnap) => {
                     if (!docSnap.exists()) {
                         // Create a new document
