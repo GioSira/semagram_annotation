@@ -162,7 +162,7 @@ function App() {
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
                 // Save the answers to firebase
-                const docRef = doc(firstore, "conceptnet/" + name);
+                const docRef = doc(firstore, "SAC_conceptnet/" + name);
                 await getDoc(docRef).then((docSnap) => {
                     if (!docSnap.exists()) {
                         // Create a new document
