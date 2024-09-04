@@ -268,16 +268,13 @@ function App() {
                         }</i> relation?
                     </h1>
                     <p className="text-xl mt-6" id="line">
-                        <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
+                        LLM Generated: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
                             <b>{
                                 // @ts-ignore
                                 dataset ? dataset[i]["llm_concept"] : ""
                             }</b>
-                        </span><pre> {
-                            // @ts-ignore
-                            relation_translation(dataset[i]["relation"])
-                        } </pre>
-                        <pre>
+                        </span>
+                        <pre> Concept
                             {
                                 // @ts-ignore
                             dataset ? dataset[i]["concept"] : ""
