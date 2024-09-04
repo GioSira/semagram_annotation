@@ -35,7 +35,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const firstore = getFirestore(app);
-const col = collection(firstore, "framenet") as CollectionReference<DataType>;
+const col = collection(firstore, "SAC") as CollectionReference<DataType>;
 
 
 function App() {
@@ -162,7 +162,7 @@ function App() {
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
                 // Save the answers to firebase
-                const docRef = doc(firstore, "framenet/" + name);
+                const docRef = doc(firstore, "conceptnet/" + name);
                 await getDoc(docRef).then((docSnap) => {
                     if (!docSnap.exists()) {
                         // Create a new document
@@ -261,27 +261,28 @@ function App() {
             : <div>
                 <div className="text-center justify-center mt-12">
                     {<MadeByMe/>}
-                    <h1 className="text-4xl font-bold">Is the semantic information correct with respect to the criterion?</h1>
+                    <h1 className="text-4xl font-bold">
+                        Is the marked concept correct with respect to the <i> {
+                            // @ts-ignore
+                            dataset[i]["relation"]
+                        }</i> relation?
+                    </h1>
                     <p className="text-xl mt-6" id="line">
-                        Concept: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
+                        <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
                             <b>{
                                 // @ts-ignore
                                 dataset ? dataset[i]["llm_concept"] : ""
                             }</b>
-                        </span>
-                    </p>
-                    <p className="text-xl mt-6" id="line">
-                        Criterion:
-                        {
+                        </span><pre> {
                             // @ts-ignore
+                            relation_translation(dataset[i]["relation"])
+                        } </pre>
+                        <pre>
+                            {
+                                // @ts-ignore
                             dataset ? dataset[i]["concept"] : ""
                         }
-                    </p>
-                    <p className="text-xl mt-6" id="line">
-                        Type: {
-                            // @ts-ignore
-                            dataset ? dataset[i]["type"] : ""
-                        }
+                        </pre>
                     </p>
                 </div>
                 <div className="flex justify-center mt-8">
