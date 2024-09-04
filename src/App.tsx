@@ -274,7 +274,7 @@ function App() {
                                 dataset ? dataset[i]["llm_concept"] : ""
                             }</b>
                         </span>
-                        <pre> Concept
+                        <pre> Concept:
                             {
                                 // @ts-ignore
                             dataset ? dataset[i]["concept"] : ""
