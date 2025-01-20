@@ -35,7 +35,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const firstore = getFirestore(app);
-const col = collection(firstore, "SAC") as CollectionReference<DataType>;
+const col = collection(firstore, "journal_semagram") as CollectionReference<DataType>;
 
 
 function App() {
@@ -162,7 +162,7 @@ function App() {
                 setTimeDiffs([...timeDiffs, timeDiff]);
                 // setModels([...models, model]);
                 // Save the answers to firebase
-                const docRef = doc(firstore, "SAC_conceptnet/" + name);
+                const docRef = doc(firstore, "journal_semagram/" + name);
                 await getDoc(docRef).then((docSnap) => {
                     if (!docSnap.exists()) {
                         // Create a new document
@@ -262,24 +262,27 @@ function App() {
                 <div className="text-center justify-center mt-12">
                     {<MadeByMe/>}
                     <h1 className="text-4xl font-bold">
-                        Is the marked concept correct with respect to the <i> {
-                            // @ts-ignore
-                            dataset[i]["relation"]
-                        }</i> relation?
+                        Is the marked concept correct with respect to the given category and criteria?
                     </h1>
                     <p className="text-xl mt-6" id="line">
-                        LLM Generated: <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
+                        <pre> Category:
+                            {
+                                // @ts-ignore
+                            dataset ? dataset[i]["category"] : ""
+                        }
+                        </pre>
+                        <pre> Criteria:
+                            {
+                                // @ts-ignore
+                                dataset? " " + dataset[i]["criteria"] + " " : " "
+                            }
+                        </pre>
+                        <span className="ring-2 ring-blue-500 ring-offset-4 ring-offset-slate-50 rounded-md">
                             <b>{
                                 // @ts-ignore
                                 dataset ? dataset[i]["llm_concept"] : ""
                             }</b>
                         </span>
-                        <pre> Concept:
-                            {
-                                // @ts-ignore
-                            dataset ? dataset[i]["concept"] : ""
-                        }
-                        </pre>
                     </p>
                 </div>
                 <div className="flex justify-center mt-8">
